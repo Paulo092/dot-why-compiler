@@ -46,7 +46,15 @@ int yywrap() {
 int main(int argc, char *argv[]) {
 	if (argc <= 1) {
 		show_message(ERROR, -1);
-		printf("Undefined file argument: %s [file]\n", argv[0]);
+		printf("Undefined file argument: %s [file]\n\n", argv[0]);
+		return 1;
+	}
+
+	FILE *f = fopen(argv[1], "r");
+	if(!f) {
+		show_message(ERROR, -1);
+		printf("Invalid file, the file coudn't be opened.\n");
+		fclose(f);
 		return 1;
 	}
 
@@ -54,7 +62,6 @@ int main(int argc, char *argv[]) {
 	file_format_verification(argv[1]);
 	unnecessary_arguments_verification(argc, argv);
 
-	FILE *f = fopen(argv[1], "r");
 	yyin = f;
 	yyparse();
 	fclose(f);
