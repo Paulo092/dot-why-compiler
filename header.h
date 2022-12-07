@@ -6,9 +6,12 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define ERROR 1
-#define WARNING 2
-#define DEBUG 3
+enum notice_type 
+{
+	ERROR, 
+	WARNING, 
+	DEBUG
+};
 
 enum noh_type
 {
