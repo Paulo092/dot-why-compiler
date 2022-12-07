@@ -1,0 +1,6 @@
+.vscode
+calcmp
+calc.tab.c
+calc.tab.h
+lex.yy.c
+output.dot
