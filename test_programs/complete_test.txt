@@ -1,0 +1,22 @@
+A = -10
+A = 10.0
+C = 30 - -5
+B = 20 - -10.0
+
+C = A * B - A
+C = C ^ 2
+
+show Z
+
+A = A + B / 0
+
+loop C != 0 <<
+    ? A < B << show A >>
+    $ << show B >>
+
+    ? (A > B) and (C > 0) <<
+        show (C)
+    >>
+
+    C = C - 1
+>>
